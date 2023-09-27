@@ -44,6 +44,7 @@ resource "aws_security_group" "default" {
 }
 
 resource "aws_instance" "ssh_host" {
+  
   ami           = "${data.aws_ami.ubuntu-20.id}"
   instance_type = var.instance_type
   key_name      = "${aws_key_pair.mykey.id}"
@@ -51,5 +52,7 @@ resource "aws_instance" "ssh_host" {
   subnet_id              = var.subnet_ids[0]
   vpc_security_group_ids = ["${aws_security_group.default.id}"]
   user_data              = "${data.template_file.startup.rendered}"
-
+  tags = {
+    name = "${var.namespace}-instance"
+  }
 }
