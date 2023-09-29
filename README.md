@@ -1,3 +1,6 @@
+connect:
+ssh ubuntu@IP-OUTPUT
+
 # Managing Elasticache with Terraform
 Developers continue to pick Redis as their favorite NoSQL data store [Stack Overflow Developer Survey 2017](https://insights.stackoverflow.com/survey/2017#technology-most-loved-dreaded-and-wanted-databases) and Amazon ElastiCache provides an easy, fast, and highly available Redis on AWS.  ElastiCache Redis can be deployed via the AWS Console, AWS SDK, Amazon ElastiCache API, AWS CloudFormation and through deployment tools like HashiCorp Terraform.  In this blog post, we show how to easily deploy Amazon ElastiCache Redis with HashiCorp Terraform. 
  
